@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>信息列表</title>
+    <!-- 引入 Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div class="col-md-10">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                   <h3 class="panel-title">信息列表</h3>
+            </div>
+
+            <div class="panel-body">
+                <!-- table-responsive:响应式表格,在一个表展示所有的数据,当不够显示的时候可以左右滑动浏览 -->
+                <div class="table table-responsive">
+                    <!--
+                        table-bordered 类为表格和其中的每个单元格增加边框。
+                        table-hover 类可以让 <tbody> 中的每一行对 鼠标悬停 状态作出响应。
+                    -->
+                    <table class="table table-bordered table-hover">
+                        <thead class="thead-light thead-blue">
+                        <th class="text-center">我的IDIDIDID</th>
+                        <th class="text-center">我的TEXTTEXT</th>
+                        </thead>
+
+                        <tbody class="text-center">
+                        <tr th:each="user : ${userEntities}">
+                            <td th:text="${user.id}"></td>
+                            <td th:text="${user.text}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
